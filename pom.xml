@@ -3,7 +3,7 @@
   <groupId>br.com.caelum.stella</groupId>
   <artifactId>caelum-stella</artifactId>
   <packaging>pom</packaging>
-  <version>2.1.2</version>
+  <version>2.1.2-trier</version>
   <name>Caelum Stella</name>
   <description>
     Caelum Stella is a set of validators, formatters and converters
@@ -16,12 +16,34 @@
     <name>Caelum</name>
     <url>http://www.caelum.com.br</url>
 	</organization>
-
-	<parent>
-		<groupId>org.sonatype.oss</groupId>
-		<artifactId>oss-parent</artifactId>
-		<version>7</version>
-	</parent>
+  
+  <distributionManagement>
+      <repository>
+          <id>nexus</id>
+          <url>http://nexus.triersistemas.com.br/content/repositories/releases</url>
+      </repository>
+      <snapshotRepository>
+          <id>nexus</id>
+          <url>http://nexus.triersistemas.com.br/content/repositories/snapshots</url>
+      </snapshotRepository>
+  </distributionManagement>
+  
+	<repositories>
+       <repository>
+            <id>nexus-releases</id>
+            <url>http://nexus.triersistemas.com.br/content/repositories/releases</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+        <repository>
+            <id>nexus-snapshots</id>
+            <url>http://nexus.triersistemas.com.br/content/repositories/snapshots</url>
+            <snapshots> 
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+  </repositories>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -30,14 +52,14 @@
   <modules>
     <module>stella-core</module>
     <module>stella-bean-validation</module>
-    <module>stella-hibernate-user-types</module>
+<!--     <module>stella-hibernate-user-types</module> -->
     <module>stella-faces</module>
     <module>stella-boleto</module>
 <!--     <module>stella-distribution</module> -->
-    <module>examples/faces-example-1x</module>
-    <module>examples/faces-example-2x</module>
-    <module>examples/hibernate-persistence-example</module>
-    <module>examples/vraptor-validator-example</module>
+<!--     <module>examples/faces-example-1x</module> -->
+<!--     <module>examples/faces-example-2x</module> -->
+<!--     <module>examples/hibernate-persistence-example</module> -->
+<!--     <module>examples/vraptor-validator-example</module> -->
     <!--
     <module>examples/boleto-example</module>
     <module>examples/core-example</module>
